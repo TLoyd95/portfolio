@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SchedulingApp.view_controller.AddAppointmentController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="754.0">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="47.0" prefWidth="690.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="save" mnemonicParsing="false" onAction="#onSave" text="Save">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="cancel" mnemonicParsing="false" onAction="#onCancel" text="Cancel">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="292.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ComboBox fx:id="customer" prefHeight="25.0" prefWidth="180.0" promptText="Customer">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="type" prefHeight="25.0" prefWidth="180.0" promptText="Type of Appointment">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="contact" prefHeight="25.0" prefWidth="180.0" promptText="Contact Method">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <DatePicker fx:id="date" prefHeight="25.0" prefWidth="180.0" promptText="Date of Appointment">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <HBox alignment="CENTER" prefHeight="55.0" prefWidth="690.0">
+                     <children>
+                        <ComboBox fx:id="start" prefHeight="25.0" prefWidth="179.0" promptText="Appointment Start Time">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="end" prefHeight="25.0" prefWidth="168.0" promptText="Appointment End Time">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <Label text="Location" />
+                  <TextField fx:id="locationField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="515.0" />
+                  <Label text="URL" />
+                  <TextField fx:id="urlField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="515.0" />
+                  <Label text="Description" />
+                  <TextArea fx:id="description" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="515.0" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

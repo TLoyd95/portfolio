@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SchedulingApp.view_controller.MainScreenController">
+   <children>
+      <TabPane prefHeight="489.0" prefWidth="770.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Customers">
+               <content>
+                  <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="770.0">
+                     <center>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="563.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="customerTable" prefHeight="200.0" prefWidth="376.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumn" prefWidth="48.0" text="ID" />
+                                    <TableColumn fx:id="nameColumn" prefWidth="149.0" text="Name" />
+                                    <TableColumn fx:id="addressColumn" prefWidth="152.0" text="Address" />
+                                    <TableColumn fx:id="phoneColumn" prefWidth="213.0" text="Phone Number" />
+                                 </columns>
+                              </TableView>
+                              <HBox alignment="CENTER" prefHeight="64.0" prefWidth="381.0">
+                                 <children>
+                                    <Button fx:id="add" mnemonicParsing="false" onAction="#onAdd" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="modify" mnemonicParsing="false" onAction="#onModify" text="Modify">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="delete" mnemonicParsing="false" onAction="#onDelete" text="Delete">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </center>
+                     <bottom>
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="33.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="logout" mnemonicParsing="false" onAction="#onLogout" text="Logout">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="exit" mnemonicParsing="false" onAction="#onExit" text="Exit">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+          <Tab text="Calendar">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <bottom>
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="aLogout" mnemonicParsing="false" onAction="#onLogout" text="Logout">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="aExit" mnemonicParsing="false" onAction="#onExit" text="Exit">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <top>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="770.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <RadioButton fx:id="weekly" mnemonicParsing="false" onAction="#onChange" text="Weekly">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tg" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="monthly" mnemonicParsing="false" onAction="#onChange" text="Monthly" toggleGroup="$tg">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="27.0" prefWidth="770.0">
+                                 <children>
+                                    <Button fx:id="previous" mnemonicParsing="false" onAction="#onPrevious" text="&lt;- Previous">
+                                       <HBox.margin>
+                                          <Insets right="200.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="next" mnemonicParsing="false" onAction="#onNext" text="Next -&gt;">
+                                       <HBox.margin>
+                                          <Insets left="200.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="appointmentTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="716.0">
+                                <columns>
+                                  <TableColumn fx:id="customerColumn" prefWidth="148.0" text="Customer Name" />
+                                  <TableColumn fx:id="typeColumn" prefWidth="147.0" text="Appointment Type" />
+                                    <TableColumn fx:id="startColumn" minWidth="9.0" prefWidth="136.0" text="Start Time" />
+                                    <TableColumn fx:id="endColumn" minWidth="0.0" prefWidth="134.0" text="End Time" />
+                                    <TableColumn fx:id="contactColumn" prefWidth="150.0" text="Contact Method" />
+                                </columns>
+                              </TableView>
+                              <HBox alignment="CENTER" prefHeight="42.0" prefWidth="770.0">
+                                 <children>
+                                    <Button fx:id="addA" mnemonicParsing="false" onAction="#onAddA" text="Add Appointment">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="modifyA" mnemonicParsing="false" onAction="#onModifyA" text="Modify Appointment">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="details" mnemonicParsing="false" onAction="#onDetails" text="View Details" />
+                                    <Button fx:id="cancel" mnemonicParsing="false" onAction="#onCancel" text="Cancel Appointment">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </content></Tab>
+            <Tab text="Reports">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="reportTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="651.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="reportIdColumn" prefWidth="99.0" text="ID Column" />
+                            <TableColumn fx:id="reportNameColumn" minWidth="0.0" prefWidth="281.0" text="Name Column" />
+                              <TableColumn fx:id="contentColumn" prefWidth="270.0" text="Content Column" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER" prefHeight="46.0" prefWidth="770.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <RadioButton fx:id="appointmentTypes" mnemonicParsing="false" onAction="#fillReportTable" text="Appointment Types per Month">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="rtg" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="consultantSchedules" mnemonicParsing="false" onAction="#fillReportTable" text="Consultant Schedules" toggleGroup="$rtg">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="inactiveCustomers" mnemonicParsing="false" onAction="#fillReportTable" text="Inactive Customers" toggleGroup="$rtg" />
+                           </children>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="33.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="rLogout" mnemonicParsing="false" onAction="#onLogout" text="Logout">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="rExit" mnemonicParsing="false" onAction="#onExit" text="Exit">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
